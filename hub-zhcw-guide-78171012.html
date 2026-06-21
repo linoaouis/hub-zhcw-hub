@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中彩网 · 信息聚合与轻导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf9;
+            color: #1c1917;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+        }
+
+        .page {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 2.2rem 0 3.5rem 0;
+        }
+
+        /* 顶部导航 */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e6e4e0;
+            margin-bottom: 2.8rem;
+        }
+
+        .nav-logo {
+            font-weight: 500;
+            font-size: 1.3rem;
+            letter-spacing: 0.01em;
+            color: #292524;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #44403c;
+            transition: color 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: #a16207;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #1c1917;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #57534e;
+            max-width: 90%;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f0ede8;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #57534e;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 核心介绍 */
+        .intro {
+            margin-bottom: 3rem;
+        }
+
+        .intro h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #292524;
+        }
+
+        .intro p {
+            color: #57534e;
+            margin-bottom: 0.9rem;
+        }
+
+        .intro a {
+            color: #a16207;
+            text-decoration: underline 1px dashed #d6d3d0;
+            text-underline-offset: 4px;
+            font-weight: 450;
+            transition: color 0.1s;
+        }
+
+        .intro a:hover {
+            color: #7a4c0b;
+            text-decoration-color: #a16207;
+        }
+
+        /* 场景模块 */
+        .scenes {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 3.2rem;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 4px 14px rgba(0,0,0,0.02);
+            border: 1px solid #efedea;
+        }
+
+        .scene-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1c1917;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .scene-card p {
+            color: #57534e;
+            font-size: 0.95rem;
+        }
+
+        .scene-icon {
+            font-size: 1.4rem;
+            line-height: 1;
+            color: #a16207;
+        }
+
+        /* 常见说明 */
+        .faq-section {
+            border-top: 1px solid #e6e4e0;
+            padding-top: 2.2rem;
+            margin-top: 0.8rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #292524;
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.3rem;
+        }
+
+        .faq-item .q {
+            font-weight: 470;
+            color: #292524;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #57534e;
+            font-size: 0.9rem;
+        }
+
+        .faq-item .a a {
+            color: #a16207;
+            text-decoration: underline 1px dotted #d0ccc6;
+        }
+
+        .faq-item .a a:hover {
+            color: #7a4c0b;
+        }
+
+        /* footer */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #efedea;
+            font-size: 0.8rem;
+            color: #a8a29e;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .footer a {
+            color: #a8a29e;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #57534e;
+        }
+
+        @media (max-width: 520px) {
+            .page {
+                padding: 1.2rem 0 2.5rem 0;
+            }
+            .nav {
+                flex-wrap: wrap;
+                gap: 0.6rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                max-width: 100%;
+            }
+            .scene-card {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="nav">
+        <span class="nav-logo">· 中彩 ·</span>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">主题</a>
+            <a href="#">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <div class="tag">信息聚合 · 轻导航</div>
+        <h1>日常里的<br>一张安静入口</h1>
+        <p>不追逐浮光掠影，只把值得关注的角落整理成线索。这里是围绕「中彩」主题展开的一小片区域。</p>
+    </div>
+
+    <!-- 核心介绍 -->
+    <div class="intro">
+        <h2>关于这个站点</h2>
+        <p>互联网上每天有无数的窗口打开又关闭。我们筛选、整理、呈现与「中彩」相关的内容脉络——不夸大，不承诺，只做如实的信息聚合。如果你对这个话题感兴趣，不妨从 <a href="https://hub-zhcw.com">中彩网</a> 开始，那里包含更完整的索引与更新。</p>
+        <p>没有复杂的门槛，也不需要注册。每个模块都尽量克制，只提供必要的背景和路径。安静，直接，仅此而已。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes">
+        <div class="scene-card">
+            <h3><span class="scene-icon">▸</span> 日常浏览</h3>
+            <p>不需要时刻紧盯，偶尔翻开，看看是否有新的话题或视角。就像翻一本放在桌角的杂志，轻松、自然。</p>
+        </div>
+        <div class="scene-card">
+            <h3><span class="scene-icon">▸</span> 快速查询</h3>
+            <p>想确认某个概念或回顾基础信息？结构化的分类让查找不费力。所有的条目都保持简洁，没有多余装饰。</p>
+        </div>
+        <div class="scene-card">
+            <h3><span class="scene-icon">▸</span> 背景了解</h3>
+            <p>如果你是第一次接触这个领域，这里准备了一些基础说明和常见疑问的摘要。不求详尽，但求准确。</p>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <div class="faq-section">
+        <h2>一些常见的问题 · 简短说明</h2>
+
+        <div class="faq-item">
+            <div class="q">这个网站是官方平台吗？</div>
+            <div class="a">不是。这是一个个人或第三方维护的信息聚合页面，内容均来自公开可靠的来源。如需官方信息，建议直接访问相关机构网站。我们只提供索引与导航。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">内容多久更新一次？</div>
+            <div class="a">不定期。根据主题变化和素材积累而更新。关键入口保持长期有效，比如 <a href="https://hub-zhcw.com">中彩网</a> 始终作为核心参考链接保留。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">我可以在哪里找到更多？</div>
+            <div class="a">聚合页里收集了多个方向的内容，但最重要的主线都汇总在 <a href="https://hub-zhcw.com">中彩网</a> 这个地址。你可以把它当作一个安静的起点。</div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <span>© 2025 · 中彩主题导航</span>
+        <span><a href="https://hub-zhcw.com">中彩网</a> ｜ 保留所有权利</span>
+    </div>
+
+</div>
+</body>
+</html>
