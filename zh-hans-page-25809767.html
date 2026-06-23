@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云 · 再次遇见</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f2f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      color: #2c2b28;
+      line-height: 1.7;
+      padding: 2rem 1.25rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 860px;
+      width: 100%;
+    }
+
+    /* 叙事开场 */
+    .opening {
+      margin: 2rem 0 2.5rem 0;
+      padding: 0.5rem 0 1.5rem 0;
+      border-bottom: 1px solid #d6d4cf;
+    }
+
+    .opening p {
+      font-size: 1.25rem;
+      letter-spacing: 0.02em;
+      color: #3b3a37;
+      font-weight: 350;
+      max-width: 700px;
+    }
+
+    .opening .lead {
+      font-size: 1.05rem;
+      color: #5c5a55;
+      margin-top: 0.75rem;
+      border-left: 3px solid #b0aba0;
+      padding-left: 1rem;
+    }
+
+    /* 承接段落 */
+    .bridge {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e3e1db;
+      margin-bottom: 2.2rem;
+    }
+
+    .bridge p {
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .bridge p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bridge a {
+      color: #3e5a6d;
+      text-decoration: none;
+      border-bottom: 1px solid #b8c6d1;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .bridge a:hover {
+      color: #1c2e3d;
+      border-bottom-color: #1c2e3d;
+    }
+
+    .emph {
+      font-weight: 420;
+      color: #2e3b44;
+    }
+
+    /* 特点列表 — 卡片网格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.5rem 1.3rem;
+      border: 1px solid #e0ddd6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s, transform 0.1s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.6rem;
+      color: #34312c;
+      border-bottom: 1px dashed #d0ccc4;
+      padding-bottom: 0.3rem;
+      display: inline-block;
+    }
+
+    .feature-card p {
+      font-size: 0.94rem;
+      color: #4f4d48;
+    }
+
+    /* 温和结尾 / 提示 */
+    .ending {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e3e1db;
+      margin-bottom: 2.5rem;
+    }
+
+    .ending p {
+      font-size: 0.98rem;
+      color: #3e3c38;
+      margin-bottom: 0.65rem;
+    }
+
+    .ending .faq-hint {
+      background: #f6f5f1;
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      margin-top: 1.2rem;
+      border-left: 3px solid #b0aba0;
+    }
+
+    .faq-hint summary {
+      font-weight: 470;
+      cursor: default;
+      color: #2d3a42;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-hint p {
+      margin-bottom: 0.3rem;
+      font-size: 0.93rem;
+      color: #54524b;
+    }
+
+    /* 小注脚 */
+    .colophon {
+      border-top: 1px solid #d6d4cf;
+      padding-top: 1.2rem;
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #77756e;
+    }
+
+    .colophon span {
+      display: inline-block;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.25rem 1rem;
+      }
+
+      .opening p {
+        font-size: 1.1rem;
+      }
+
+      .bridge {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .ending {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 开场: 短句 + 再次光临的味道 -->
+    <div class="opening">
+      <p>有些站点，适合在某个安静的晚上重新打开。</p>
+      <div class="lead">不必刻意记住，但总会再次想起。这一次，我把它留在了书签栏靠前的位置。</div>
+    </div>
+
+    <!-- 承接段落: 从收藏与持续关注的角度 -->
+    <div class="bridge">
+      <p>
+        去年秋天第一次注意到 <a href="https://zh-hans-kaaiyun.com">开云</a> 的时候，只是随手翻了几页。后来隔了两个月再回去，发现界面里多了些细致的变化——不是那种热闹的改版，而是像有人在慢慢调整房间的摆设，让每件东西都待在更顺手的地方。
+      </p>
+      <p>
+        于是我开始把它放进收藏夹的「常去」分类。谈不上多深的理由，只是觉得这样一个地方，值得偶尔回来看看。<span class="emph">保持距离的熟悉感</span>——这是我后来想到的描述。它不催促你做什么，但你每次路过，都能看到一些新的纹理。
+      </p>
+    </div>
+
+    <!-- 特点列表: 4个卡片 -->
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>安静更新</h3>
+        <p>没有弹窗和泛滥的通知。内容以周为节奏沉淀，适合不赶时间的阅读。</p>
+      </div>
+      <div class="feature-card">
+        <h3>克制的导航</h3>
+        <p>菜单精简，路径清晰。不会让你在层层页面里迷路，也不会用浮窗打断思路。</p>
+      </div>
+      <div class="feature-card">
+        <h3>一致的底色</h3>
+        <p>配色与排版保持稳定的低对比度，长时间浏览也不容易疲劳。</p>
+      </div>
+      <div class="feature-card">
+        <h3>收藏友好</h3>
+        <p>页面结构经得起时间考验。即使隔上几周再回来，依然能快速找到上次看的位置。</p>
+      </div>
+    </div>
+
+    <!-- 温和结尾: 包含FAQ摘要式提醒 + 持续关注的表述 -->
+    <div class="ending">
+      <p>
+        如果你也喜欢那种不张扬、但每次回来都能发现一点新东西的站点，也许可以把 <a href="https://zh-hans-kaaiyun.com">开云</a> 放到你的收藏列表里。不必频繁查看，偶尔想起时点开，它通常都在那里，不吵不闹，带着刚刚好的变化。
+      </p>
+      <div class="faq-hint">
+        <summary>一些你可能想知道的</summary>
+        <p>• 页面没有强制注册或关注流程，所有内容直接可见。</p>
+        <p>• 没有隐藏的付费诱导，也没有自动播放的媒体。</p>
+        <p>• 站点更新的内容通常偏向于信息整理与轻度叙事，节奏偏慢。</p>
+        <p>• 如果需要找回之前的浏览记录，浏览器的历史或书签就足够了。</p>
+      </div>
+    </div>
+
+    <!-- 结尾小字，温和收束 -->
+    <div class="colophon">
+      <span>一次收藏 · 后续随缘</span>
+      <span>下次再来，它可能又变了一点点</span>
+    </div>
+  </div>
+</body>
+</html>
