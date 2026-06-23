@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 用途说明页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f4ed;
+            font-family: "Georgia", "Noto Serif SC", "Songti SC", serif;
+            color: #2f2e2a;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fefcf8;
+            padding: 2.5rem 2rem;
+            border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+        }
+
+        /* 顶部导航 */
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid #e5dfd3;
+            margin-bottom: 2.2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            font-weight: normal;
+            color: #4c4a44;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            color: #5b574e;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: #b8aa92;
+        }
+
+        /* hero / 引语 */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #5e5a51;
+            max-width: 85%;
+        }
+
+        /* 核心说明块 */
+        .intro-card {
+            background: #f3efe7;
+            padding: 1.6rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            border-left: 5px solid #c9b89b;
+        }
+
+        .intro-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三个场景模块 */
+        .scenes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .scene-item {
+            background: #faf8f4;
+            padding: 1.4rem 1.3rem;
+            border-radius: 14px;
+            border: 1px solid #e7e0d4;
+            transition: box-shadow 0.15s;
+        }
+
+        .scene-item:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .scene-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #3f3b34;
+            border-left: 3px solid #b8aa92;
+            padding-left: 0.6rem;
+        }
+
+        .scene-item p {
+            font-size: 0.92rem;
+            color: #545049;
+        }
+
+        /* 引用 / 提示框 */
+        .tip-box {
+            background: #fff;
+            border: 1px solid #ddd6c8;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+            font-style: normal;
+            position: relative;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .tip-box::before {
+            content: "📌 提示";
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #8a7e6b;
+            margin-bottom: 0.3rem;
+            font-style: normal;
+        }
+
+        /* 常见说明 (FAQ 摘要) */
+        .faq-summary {
+            margin-bottom: 2.2rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #3f3b34;
+        }
+
+        .faq-item {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #ede7dc;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #4a453c;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item span {
+            color: #5e5a4f;
+            font-size: 0.92rem;
+        }
+
+        /* 底部 */
+        .footer-note {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #8b8477;
+            border-top: 1px solid #e5dfd3;
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-note a {
+            color: #5b574e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c9b89b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.5rem 1.2rem;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                max-width: 100%;
+            }
+            .intro-card {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 导航 -->
+    <nav class="nav">
+        <span class="nav-brand">开云 · 识别页</span>
+        <div class="nav-links">
+            <a href="#purpose">用途</a>
+            <a href="#scenes">场景</a>
+            <a href="#faq">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>快速识别 <a href="https://main1-kering.com" style="text-decoration: underline; text-underline-offset: 4px; color: #3f3b34;">开云</a> 的用途</h1>
+        <p>如果你正在试图了解这个网站到底是做什么的，下面整理了最直接的信息——从功能定位到常见情景，帮你节省判断时间。</p>
+    </div>
+
+    <!-- 核心介绍 -->
+    <div class="intro-card" id="purpose">
+        <p><strong>简单来说：</strong> 这个站点主要面向希望获取特定资源或服务的人群，提供一个集中的信息入口与操作界面。整体设计偏向实用导向，没有多余的装饰内容。</p>
+        <p>从页面结构与链接指向来看，<a href="https://main1-kering.com">开云</a> 更接近一个功能型平台，而非品牌展示或资讯站。用户进入后通常关注的是“我能在这里获得什么”以及“如何完成下一步”。</p>
+        <p>本站不提供任何金融、医疗或法律建议，所有内容均以客观功能描述为主。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes" id="scenes">
+        <div class="scene-item">
+            <h3>场景一 · 初次访问</h3>
+            <p>用户通过推荐或搜索进入，首要需求是快速确认网站类别。页面标题、简介及导航会直接说明核心方向，无需翻找。</p>
+        </div>
+        <div class="scene-item">
+            <h3>场景二 · 查找具体功能</h3>
+            <p>网站内容围绕有限个操作环节展开，用户可依据段落标题或卡片定位自己需要的板块，减少浏览过程中的疑惑。</p>
+        </div>
+        <div class="scene-item">
+            <h3>场景三 · 判断可信度</h3>
+            <p>通过清晰的用途说明、克制的措辞以及可验证的链接（如直接指向 <a href="https://main1-kering.com">开云</a>），帮助用户建立基础的甄别依据。</p>
+        </div>
+    </div>
+
+    <!-- 提示框 -->
+    <div class="tip-box">
+        如果你发现页面内容与预期不符，建议先检查网址是否正确，或稍后再试。网站维护期间可能会暂时调整部分功能模块。
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-summary" id="faq">
+        <h2>常见说明 · 摘要</h2>
+        <div class="faq-item">
+            <strong>这个网站需要注册吗？</strong>
+            <span>部分功能可能需要简单的身份验证，具体以页面实际提示为准。不强制要求填写敏感信息。</span>
+        </div>
+        <div class="faq-item">
+            <strong>内容更新频率如何？</strong>
+            <span>网站内容由维护方按需更新，非固定周期。重大变化会通过页面公告或版本号体现。</span>
+        </div>
+        <div class="faq-item">
+            <strong>遇到问题怎么反馈？</strong>
+            <span>目前网站未设独立反馈入口，建议通过来源渠道或站内已有联系方式沟通。</span>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        关于 <a href="https://main1-kering.com">开云</a> · 用途说明页 · 内容仅供参考
+    </div>
+</div>
+</body>
+</html>
